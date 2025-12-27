@@ -45,12 +45,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/fs-browser.git"
+    "url": "https://github.com/Jisan901/fs-browser.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/fs-browser/issues"
+    "url": "https://github.com/Jisan901/fs-browser/issues"
   },
-  "homepage": "https://github.com/yourusername/fs-browser#readme",
+  "homepage": "https://github.com/Jisan901/fs-browser#readme",
   "peerDependencies": {
     "vite": "^4.0.0 || ^5.0.0"
   },
