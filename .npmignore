@@ -1,0 +1,33 @@
+# Source control
+.git/
+.gitignore
+
+# Documentation
+docs/
+examples/
+
+# Development
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+test/
+tests/
+coverage/
+.nyc_output/
+
+# Build tools
+.eslintrc*
+.prettierrc*
+tsconfig.json
+
+# CI
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Misc
+*.log
+.DS_Store

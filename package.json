@@ -1,0 +1,65 @@
+
+{
+  "name": "fs-browser",
+  "version": "1.0.0",
+  "description": "Browser-compatible filesystem API with Vite plugin support",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "type": "module",
+  "bin": {
+    "withfs": "./bin/withfs.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./plugin": {
+      "import": "./plugin/vite.js",
+      "require": "./plugin/vite.js"
+    }
+  },
+  "files": [
+    "bin",
+    "src",
+    "plugin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "filesystem",
+    "browser",
+    "fs",
+    "vite",
+    "plugin",
+    "file-api",
+    "node-fs",
+    "browser-fs",
+    "cli",
+    "server"
+  ],
+  "author": "claude:sonnet4.5",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/fs-browser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/fs-browser/issues"
+  },
+  "homepage": "https://github.com/yourusername/fs-browser#readme",
+  "peerDependencies": {
+    "vite": "^4.0.0 || ^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
