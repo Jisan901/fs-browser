@@ -1,4 +1,4 @@
-# fs-browser
+# @jisan901/fs-browser
 
 Browser-compatible filesystem API with Vite plugin support. Write Node.js-style fs code that works in the browser!
 
@@ -14,7 +14,7 @@ Browser-compatible filesystem API with Vite plugin support. Write Node.js-style 
 ## Installation
 
 ```bash
-npm install fs-browser
+npm install @jisan901/fs-browser
 ```
 
 ## Quick Start
@@ -26,7 +26,7 @@ npm install fs-browser
 ```javascript
 // vite.config.js
 import { defineConfig } from 'vite';
-import fsPlugin from 'fs-browser/plugin';
+import fsPlugin from '@jisan901/fs-browser/plugin';
 
 export default defineConfig({
   plugins: [
@@ -41,7 +41,7 @@ export default defineConfig({
 **2. Use in Browser Code**
 
 ```javascript
-import { readFile, writeFile, mkdir } from 'fs-browser';
+import { readFile, writeFile, mkdir } from '@jisan901/fs-browser';
 
 // Write a file
 await writeFile('hello.txt', 'Hello World!');
@@ -115,7 +115,7 @@ withfs ./dist --host --open
 
 ## Development with Other Frameworks
 
-While `fs-browser` includes a Vite plugin, you can use it with any framework or development setup by running the `withfs` server separately.
+While `@jisan901/fs-browser` includes a Vite plugin, you can use it with any framework or development setup by running the `withfs` server separately.
 
 ### React (Create React App, Next.js)
 
@@ -138,7 +138,7 @@ npm start
 
 ```javascript
 // App.js
-import { readFile, writeFile } from 'fs-browser';
+import { readFile, writeFile } from '@jisan901/fs-browser';
 
 function App() {
   const handleSave = async () => {
@@ -153,7 +153,7 @@ function App() {
 
 ```javascript
 // lib/fs.js
-import fs from 'fs-browser';
+import fs from '@jisan901/fs-browser';
 
 export default fs.configure({ 
   apiBase: 'http://localhost:5001/api/fs' 
@@ -202,7 +202,7 @@ npm run serve
 ```vue
 <!-- App.vue -->
 <script setup>
-import { readFile, writeFile } from 'fs-browser';
+import { readFile, writeFile } from '@jisan901/fs-browser';
 
 const saveFile = async () => {
   await writeFile('vue-data.json', { framework: 'Vue' });
@@ -218,7 +218,7 @@ const saveFile = async () => {
 
 ```javascript
 // composables/useFs.js
-import fs from 'fs-browser';
+import fs from '@jisan901/fs-browser';
 
 export const useFs = () => {
   return fs.configure({ 
@@ -274,7 +274,7 @@ ng serve
 
 ```typescript
 // app.component.ts
-import { readFile, writeFile } from 'fs-browser';
+import { readFile, writeFile } from '@jisan901/fs-browser';
 
 export class AppComponent {
   async saveFile() {
@@ -315,7 +315,7 @@ npm run dev
 ```svelte
 <!-- +page.svelte -->
 <script>
-  import { readFile, writeFile } from 'fs-browser';
+  import { readFile, writeFile } from '@jisan901/fs-browser';
   
   async function saveFile() {
     await writeFile('svelte-data.txt', 'Hello SvelteKit!');
@@ -360,7 +360,7 @@ npm run dev
 // src/pages/index.astro
 ---
 <script>
-  import { writeFile } from 'fs-browser';
+  import { writeFile } from '@jisan901/fs-browser';
   
   document.querySelector('#save')?.addEventListener('click', async () => {
     await writeFile('astro-data.json', { framework: 'Astro' });
@@ -378,7 +378,7 @@ npm run dev
 <!DOCTYPE html>
 <html>
 <head>
-  <title>fs-browser Demo</title>
+  <title>@jisan901/fs-browser Demo</title>
 </head>
 <body>
   <button id="save">Save File</button>
@@ -386,7 +386,7 @@ npm run dev
   <pre id="output"></pre>
 
   <script type="module">
-    import fs from 'https://cdn.jsdelivr.net/npm/fs-browser/src/index.js';
+    import fs from 'https://cdn.jsdelivr.net/npm/@jisan901/fs-browser/src/index.js';
 
     // Configure to point to your fs server
     const myFs = fs.configure({ 
@@ -448,7 +448,7 @@ npx parcel index.html
 
 ```javascript
 // Configure in your JS
-import { configure } from 'fs-browser';
+import { configure } from '@jisan901/fs-browser';
 
 configure({ apiBase: 'http://localhost:5001/api/fs' });
 ```
@@ -493,7 +493,7 @@ Set API base via environment variables:
 
 ```javascript
 // config/fs.js
-import fs from 'fs-browser';
+import fs from '@jisan901/fs-browser';
 
 const API_BASE = import.meta.env.VITE_FS_API_BASE || 
                  process.env.REACT_APP_FS_API_BASE ||
@@ -517,8 +517,8 @@ FROM node:18
 
 WORKDIR /app
 
-# Install fs-browser globally
-RUN npm install -g fs-browser
+# Install @jisan901/fs-browser globally
+RUN npm install -g @jisan901/fs-browser
 
 # Copy your built frontend
 COPY ./dist ./dist
@@ -584,7 +584,7 @@ services:
 Full TypeScript definitions included:
 
 ```typescript
-import { readFile, writeFile, Stats, Dirent } from 'fs-browser';
+import { readFile, writeFile, Stats, Dirent } from '@jisan901/fs-browser';
 
 const content: string = await readFile('test.txt', 'utf8');
 const stats: Stats = await stat('test.txt');
