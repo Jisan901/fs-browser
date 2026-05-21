@@ -46,8 +46,8 @@ export function configure(options = {}) {
  * @param {string|Object} options - Encoding string or options object
  * @returns {Promise<string|Buffer>}
  */
-export async function readFile(path, options = 'utf8') {
-  const encoding = typeof options === 'string' ? options : options?.encoding || 'utf8';
+export async function readFile(path, options = '') {
+  const encoding = typeof options === 'string' ? options : options?.encoding || '';
   const response = await fetch(`${API_BASE}/readFile?path=${encodeURIComponent(path)}&encoding=${encoding}`);
   
   if (!response.ok) {
@@ -55,8 +55,17 @@ export async function readFile(path, options = 'utf8') {
     throw new Error(error.error?.message || 'Failed to read file');
   }
   
-  const { data } = await response.json();
-  return data;
+  const contentType = response.headers.get("content-type");
+
+    if (contentType?.includes("text/plain")) {
+        const data = await response.text();
+        return data;
+    } else {
+        const buffer = await response.arrayBuffer();
+        return buffer;
+    }
+
+    return response;
 }
 
 /**

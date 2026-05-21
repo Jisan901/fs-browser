@@ -1,6 +1,6 @@
 {
     "name": "@jisan901/fs-browser",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Browser-compatible filesystem API with Vite plugin support",
     "main": "src/index.js",
     "types": "src/index.d.ts",
