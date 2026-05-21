@@ -47,7 +47,7 @@ import { readFile, writeFile, mkdir } from '@jisan901/fs-browser';
 await writeFile('hello.txt', 'Hello World!');
 
 // Read a file
-const content = await readFile('hello.txt');
+const content = await readFile('hello.txt', {encoding: 'utf-8'});
 console.log(content); // "Hello World!"
 
 // Create directory
@@ -399,7 +399,7 @@ npm run dev
     };
 
     document.getElementById('read').onclick = async () => {
-      const content = await myFs.readFile('demo.txt');
+      const content = await myFs.readFile('demo.txt', {encoding: 'utf-8'});
       document.getElementById('output').textContent = content;
     };
   </script>
